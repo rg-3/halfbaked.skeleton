@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "<edit me>",
-  "description": "<edit me>",
+  "name": "EDITME",
+  "description": "EDITME",
   "version": "0.1.0",
-  "permissions": ["<edit me>"],
+  "permissions": [],
   "icons": {"16": "images/icon16.png", "48": "images/icon48.png", "128": "images/icon128.png"},
   "content_scripts": [
     {
-      "matches": ["<edit me>"],
+      "matches": ["https://EDITME.com/*"],
       "js": ["/js/content-scripts/content-script.js"],
       "run_at": "document_start"
     }

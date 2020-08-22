@@ -29,7 +29,7 @@ onto web page(s). A familiarity with extension development is assumed.
 
 * The `src/` directory is where extension code lives. The `src/manifest.json`
   file should be one of the first files you edit to tailor it to your project.
-  Anywhere you see `<edit me>` should be updated.
+  Anywhere you see `EDITME` should be updated.
 
 * This skeleton is designed for an extension that injects content scripts
   onto web page(s). It doesn't provide for anything beyond that like setting
