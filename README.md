@@ -45,6 +45,10 @@ onto web page(s). A familiarity with extension development is assumed.
   display alongside the address bar and on the `chrome://extensions` page.
   Most likely you will eventually want to update these for your own extension.
 
+* An objective of this skeleton is to be loadable without edits
+  being made. You can try loading it in Chrome first (with Developer Mode turned on),
+  then edit afterwards if you want.
+
 ## <a id='install'> Install </a>
 
 The install process is simple. All you have to do is clone the project and
