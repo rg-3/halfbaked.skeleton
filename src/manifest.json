@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "<edit me>",
+  "description": "<edit me>",
+  "version": "0.1.0",
+  "permissions": ["<edit me>"],
+  "icons": {"16": "images/icon16.png", "48": "images/icon48.png", "128": "images/icon128.png"},
+  "content_scripts": [
+    {
+      "matches": ["<edit me>"],
+      "js": ["/js/content-scripts/content-script.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
