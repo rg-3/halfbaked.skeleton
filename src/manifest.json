@@ -5,11 +5,6 @@
   "version": "0.1.0",
   "permissions": [],
   "icons": {"16": "images/icon16.png", "48": "images/icon48.png", "128": "images/icon128.png"},
-  "content_scripts": [
-    {
-      "matches": ["https://EDITME.com/*"],
-      "js": ["/js/content-scripts/content-script.js"],
-      "run_at": "document_start"
-    }
-  ]
+  "browser_action": {"default_popup": "html/browser-action.html"},
+  "background": {"page": "/html/background.html"}
 }

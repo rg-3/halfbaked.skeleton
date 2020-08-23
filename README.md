@@ -1,25 +1,30 @@
-# content-script.skeleton
+# halfbaked.skeleton
 
 **Table of contents**
 
 * <a href='#introduction'>Introduction</a>
-* <a href='#approach'>The approach this skeleton takes</a>
+* <a href='#overview'>Overview</a>
+* <a href='#file-layout'>File layout</a>
+* <a href='#file-layout-visual'>File layout (visual)</a>
 * <a href='#install'>Install</a>
+* <a href='#source'>Source</a>
+
 
 ## <a id='introduction'>Introduction</a>
 
 This repository is intended as an aid in Chrome extension development.
 It provides a skeleton you can use to kickstart development of a new
-extension who has a focus on content scripts.
+extension that includes a browser action popup and a background page.
 
-It's my intention to create a number of skeletons that target different types
+The intention is to create a number of skeletons that target different types
 of Chrome extensions, for example those who only use content scripts all the way
-to those who have content scripts, a background page and a browser action.
+to those who have content scripts, a background page, and a browser action. Or
+different combinations of all three. I hope to provide skeletons that
+have an option to use webpack and other build tools as well as having the option
+to not use them, and for that to be a feature because that model of development can
+be simpler.
 
-This particular skeleton targets extensions who only inject content scripts
-onto web page(s). A familiarity with extension development is assumed.
-
-## <a id='approach'>The approach this skeleton takes</a>
+## <a id='overview'>Overview</a>
 
 * This skeleton follows a model where the extension doesn't need to be "built".
   The source HTML, CSS and JS files are not processed by build tools in anyway.
@@ -27,32 +32,83 @@ onto web page(s). A familiarity with extension development is assumed.
   edit the source and see the changes in the browser without a build step in
   between.
 
-* The `src/` directory is where extension code lives. The `src/manifest.json`
+* The src/ directory is where extension code lives. The [`src/manifest.json`](src/manifest.json)
   file should be one of the first files you edit to tailor it to your project.
-  Anywhere you see `EDITME` should be updated.
+  Anywhere you see `EDITME` should be updated. The provided manifest.json file
+  fills in the bare minimum. The [manifest.json documentation from Google](https://developer.chrome.com/extensions/manifest)
+  provides a complete list of what's available.
 
-* This skeleton is designed for an extension that injects content scripts
-  onto web page(s). It doesn't provide for anything beyond that like setting
-  up the extension to have a browser action, or background page.
-
-* The `src/js` directory holds another directory named `content-scripts`. Inside
-  this directory content scripts should be placed and further configured in
-  `src/manifest.json`. `src/js/content-scripts/content-script.js` is
-  provided as a starting point for a content script that can be edited and
-  renamed.
-
-* The `src/images` directory holds placeholder icons that the browser will
-  display alongside the address bar and on the `chrome://extensions` page.
-  Most likely you will eventually want to update these for your own extension.
+* This skeleton is designed for an extension that has a browser action popup
+  and a background page.
 
 * An objective of this skeleton is to be loadable without edits
   being made. You can try loading it in Chrome first (with Developer Mode turned on),
-  then edit afterwards if you want.
+  then edit afterwards if you want. This allows you to write code before you decide
+  a project name or which icons you'll use.
+
+## <a id='file-layout'> File layout </a>
+
+* The [`src/html`](/src/html) directory contains [`browser-action.html`](src/html/browser-action.html) and
+  [`background.html`](src/html/background.html).
+
+  The [`src/html/browser-action.html`](src/html/browser-action.html) file can be edited to change
+  the contents of the browser action's popup. It includes [`src/css/browser-action.css`](src/css/browser-action.css)
+  and [`src/js/browser-action.js`](src/js/browser-action.js). Both of these files can be
+  edited to change the appearance and behavior of the browser action's popup.
+
+  The [`src/html/background.html`](src/html/background.html) file's main purpose is to include
+  [`src/js/background.js`](/src/js/background.js).
+
+ * The [`src/js/background.js`](src/js/background.js) file is implemented to
+   define `window.app`. The `app` object is created by importing and instantiating
+   [`src/js/background/app.js`](src/js/background/app.js). The `app` object is
+   a place where you can define properties, objects and methods that your
+   extension uses. It also provides persistence that the browser action's
+   popup lacks.
+
+ * The [`src/js/browser-action.js`](src/js/browser-action.js) file can access the
+   same `app` object by calling `chrome.extension.getBackgroundPage().app`. This
+   allows the browser action to access the `app` object and avail of its features.
+
+* The [`src/images`](src/images) directory holds placeholder icons that the browser will
+  display alongside the address bar and on the `chrome://extensions` page.
+  Most likely you will eventually want to update these for your own extension.
+
+## <a id='file-layout-visual'>File layout (visual)</a>
+      $ tree
+      .
+      ├── README.md
+      └── src
+          ├── css
+          │   └── browser-action.css
+          ├── html
+          │   ├── background.html
+          │   └── browser-action.html
+          ├── images
+          │   ├── icon128.png
+          │   ├── icon16.png
+          │   └── icon48.png
+          ├── js
+          │   ├── background
+          │   │   └── app.js
+          │   └── background.js
+          ├── LICENSE.txt
+          └── manifest.json
 
 ## <a id='install'> Install </a>
 
 The install process is simple. All you have to do is clone the project and
 then edit it to meet your needs.
 
-    git clone https://github.com/rg-3/content-script.skeleton my-project-name
+    git clone https://github.com/rg-3/halfbaked.skeleton my-project-name
+    cd my-project-name
+    # Make room for your own repository
+    rm -rf .git
+    # Make room for your own README
+    mv README.md README.skeleton.md
 
+
+## <a id='source'>Source</a>
+
+The project homepage for this skeleton is at [https://github.com/rg-3/halfbaked.skeleton](https://github.com/rg-3/halfbaked.skeleton).
+I am maintaining other Chrome extension skeletons that might be useful on my [github profile](https://github.com/rg-3).
