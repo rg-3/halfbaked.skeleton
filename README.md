@@ -98,7 +98,7 @@ be simpler.
 ## <a id='install'> Install </a>
 
 The install process is simple. All you have to do is clone the project and
-then edit it to meet your needs.
+then adopt it as the starting point for your new extension.
 
     git clone https://github.com/rg-3/halfbaked.skeleton my-project-name
     cd my-project-name
