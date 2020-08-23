@@ -26,6 +26,9 @@ be simpler.
 
 ## <a id='overview'>Overview</a>
 
+* This skeleton is designed for an extension that has a browser action popup
+  and a background page.
+
 * This skeleton follows a model where the extension doesn't need to be "built".
   The source HTML, CSS and JS files are not processed by build tools in anyway.
   This approach provides simplicity. For example, in this environment you can
@@ -38,12 +41,9 @@ be simpler.
   fills in the bare minimum. The [manifest.json documentation from Google](https://developer.chrome.com/extensions/manifest)
   provides a complete list of what's available.
 
-* This skeleton is designed for an extension that has a browser action popup
-  and a background page.
-
 * An objective of this skeleton is to be loadable without edits
   being made. You can try loading it in Chrome first (with Developer Mode turned on),
-  then edit afterwards if you want. This allows you to write code before you decide
+  then edit afterwards if you want. This allows writing code before you decide
   a project name or which icons you'll use.
 
 ## <a id='file-layout'> File layout </a>
