@@ -3,6 +3,7 @@
 **Table of contents**
 
 * <a href='#introduction'>Introduction</a>
+* <a href='#goals'>Goals</a>
 * <a href='#overview'>Overview</a>
 * <a href='#file-layout'>File layout</a>
 * <a href='#file-layout-visual'>File layout (visual)</a>
@@ -16,13 +17,16 @@ This repository is intended as an aid in Chrome extension development.
 It provides a skeleton you can use to kickstart development of a new
 extension that includes a browser action popup and a background page.
 
-The intention is to create a number of skeletons that target different types
+## <a id='goals'>Goals</a>
+
+The end goal is to create a number of skeletons that target different types
 of Chrome extensions, for example those who only use content scripts all the way
 to those who have content scripts, a background page, and a browser action. Or
-different combinations of all three. I hope to provide skeletons that
-have an option to use webpack and other build tools as well as having the option
-to not use them, and for that to be a feature because that model of development can
-be simpler.
+different combinations of all three.
+
+I hope to provide skeletons that have an option to use webpack and other build tools
+as well as having skeletons that do not use them, and for that to be a feature
+because that model of development can be simpler.
 
 ## <a id='overview'>Overview</a>
 
