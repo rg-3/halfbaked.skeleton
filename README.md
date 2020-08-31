@@ -52,52 +52,84 @@ because that model of development can be simpler.
 
 ## <a id='file-layout'> File layout </a>
 
+**HTML**
+
 * The [`src/html`](/src/html) directory contains [`browser-action.html`](src/html/browser-action.html) and
   [`background.html`](src/html/background.html).
 
-  The [`src/html/browser-action.html`](src/html/browser-action.html) file can be edited to change
-  the contents of the browser action's popup. It includes [`src/css/browser-action.css`](src/css/browser-action.css)
-  and [`src/js/browser-action.js`](src/js/browser-action.js). Both of these files can be
-  edited to change the appearance and behavior of the browser action's popup.
+* The [`src/html/browser-action.html`](src/html/browser-action.html) file can be edited to change
+  the contents of the browser action's popup.
 
-  The [`src/html/background.html`](src/html/background.html) file's main purpose is to include
+* The [`src/html/background.html`](src/html/background.html) file's main purpose is to include
   [`src/js/background.js`](/src/js/background.js).
 
+**CSS**
+
+* The [`src/css/`](/src/css) directory is for CSS belonging to your extension.
+
+* The [`src/css/browser-action.css`](/src/css/browser-action.css) file styles the content of 
+  [`src/html/browser-action.html`](/src/html/browser-action.html).
+
+**JavaScript**
+
+ * The [`src/js/`](/src/js) directory is for JavaScript belonging to your extension.
+
+ * The [`src/js/browser-action/`](src/js/browser-action) directory is for JavaScript
+   that's unique to the browser action popup.
+
+  * The [`src/js/background/`](src/js/background) directory is for JavaScript
+    belonging to your extension's background page.
+
  * The [`src/js/background.js`](src/js/background.js) file is implemented to
-   define `window.app`. The `app` object is created by importing and instantiating
-   [`src/js/background/app.js`](src/js/background/app.js). The `app` object is
-   a place where you can define properties, objects and methods that your
-   extension uses. It also provides persistence that the browser action's
-   popup lacks.
+   define `window.app`.  
+   The `app` object is created by importing and instantiating 
+   [`src/js/background/app.js`](src/js/background/app.js).
 
- * The [`src/js/browser-action.js`](src/js/browser-action.js) file can access the
-   same `app` object by calling `chrome.extension.getBackgroundPage().app`. This
-   allows the browser action to access the `app` object and avail of its features.
+   **Tip**  
+   The background page is instantiated once each time the browser starts. It provides 
+   a layer of persistence while its in memory and we can also avail of its other 
+   features such as `window.localStorage`.
 
-* The [`src/images`](src/images) directory holds placeholder icons that the browser will
-  display alongside the address bar and on the `chrome://extensions` page.
-  Most likely you will eventually want to update these for your own extension.
+ * The [`src/js/browser-action.js`](src/js/browser-action.js) file is included
+   by [src/html/browser-action.html](src/html/browser-action.html) every time 
+   the browser action's popup is opened.
+
+   **Tip**  
+   The `app` object implemented by the background page can be accessed with this code: 
+   
+        chrome.extension.getBackgroundPage().app
+
+
+**Images**
+
+* The [`src/images`](src/images) directory is for images used by your extension.
 
 ## <a id='file-layout-visual'>File layout (visual)</a>
-      $ tree
-      .
-      ├── README.md
-      └── src
-          ├── css
-          │   └── browser-action.css
-          ├── html
-          │   ├── background.html
-          │   └── browser-action.html
-          ├── images
-          │   ├── icon128.png
-          │   ├── icon16.png
-          │   └── icon48.png
-          ├── js
-          │   ├── background
-          │   │   └── app.js
-          │   └── background.js
-          ├── LICENSE.txt
-          └── manifest.json
+
+    $ tree
+    .
+    ├── README.md
+    └── src
+        ├── css
+        │   └── browser-action.css
+        ├── html
+        │   ├── background.html
+        │   └── browser-action.html
+        ├── images
+        │   ├── icon128.png
+        │   ├── icon16.png
+        │   └── icon48.png
+        ├── js
+        │   ├── background
+        │   │   └── app.js
+        │   ├── background.js
+        │   ├── browser-action
+        │   └── browser-action.js
+        ├── LICENSE.txt
+        └── manifest.json
+
+    7 directories, 12 files
+
 
 ## <a id='install'> Install </a>
 
