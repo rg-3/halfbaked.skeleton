@@ -95,7 +95,8 @@ because that model of development can be simpler.
    the browser action's popup is opened.
 
    **Tip**  
-   The `app` object implemented by the background page can be accessed with this code: 
+   The `app` object implemented by the background page can be accessed from the
+   browser action with this code: 
    
         chrome.extension.getBackgroundPage().app
 
@@ -147,4 +148,4 @@ then adopt it as the starting point for your new extension.
 ## <a id='source'>Source</a>
 
 The project homepage for this skeleton is at [https://github.com/rg-3/halfbaked.skeleton](https://github.com/rg-3/halfbaked.skeleton).
-I am maintaining other Chrome extension skeletons that might be useful on my [github profile](https://github.com/rg-3).
+I am maintaining other Chrome extension skeletons that might be helpful on my [github profile](https://github.com/rg-3).
