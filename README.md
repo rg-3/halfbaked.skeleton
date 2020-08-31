@@ -24,9 +24,10 @@ of Chrome extensions, for example those who only use content scripts all the way
 to those who have content scripts, a background page, and a browser action. Or
 different combinations of all three.
 
-I hope to provide skeletons that have an option to use webpack and other build tools
-as well as having skeletons that do not use them, and for that to be a feature
-because that model of development can be simpler.
+I eventually hope to provide skeletons that have an option to use webpack and 
+other build tools as well as having skeletons that do not use them (such as 
+this one).
+
 
 ## <a id='overview'>Overview</a>
 
