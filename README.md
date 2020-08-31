@@ -96,9 +96,11 @@ because that model of development can be simpler.
 
    **Tip**  
    The `app` object implemented by the background page can be accessed from the
-   browser action with this code: 
+   browser action with the following code: 
    
-        chrome.extension.getBackgroundPage().app
+    ```javascript
+    const app = chrome.extension.getBackgroundPage().app
+    ```
 
 
 **Images**
