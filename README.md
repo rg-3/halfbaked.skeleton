@@ -140,11 +140,16 @@ this one).
 The install process is simple.  
 All you have to do is clone the repository and then adopt it as the starting point for your new extension.
 
+    # Clone repository
     git clone https://github.com/rg-3/halfbaked.skeleton my-project-name
     cd my-project-name
-    # Make room for your own repository
+
+    # Checkout most recent version of the skeleton
+    git fetch --tags
+    git checkout tags/v0.2.0 -b new-extension
+
+    # Make room for your own repository and README
     rm -rf .git
-    # Make room for your own README
     mv README.md README.skeleton.md
 
 
