@@ -137,7 +137,7 @@ this one).
 
 ## <a id='install'> Install </a>
 
-The install process is simple.  
+The install process is straight forward.  
 All you have to do is clone the repository and then adopt it as the starting point for your new extension.
 
     # Clone repository
