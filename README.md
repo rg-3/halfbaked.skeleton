@@ -17,18 +17,6 @@ This repository is intended as an aid in Chrome extension development.
 It provides a skeleton you can use to kickstart development of a new
 extension that includes a browser action popup and a background page.
 
-## <a id='goals'>Goals</a>
-
-The end goal is to create a number of skeletons that target different types
-of Chrome extensions, for example those who only use content scripts all the way
-to those who have content scripts, a background page, and a browser action. Or
-different combinations of all three.
-
-I eventually hope to provide skeletons that have an option to use webpack and 
-other build tools as well as having skeletons that do not use them (such as 
-this one).
-
-
 ## <a id='overview'>Overview</a>
 
 * This skeleton is designed for an extension that has a browser action popup
@@ -40,7 +28,7 @@ this one).
   edit the source and see the changes in the browser without a build step in
   between.
 
-* The src/ directory is where extension code lives. The [`src/manifest.json`](src/manifest.json)
+* The `src/` directory is where extension code lives. The [`src/manifest.json`](src/manifest.json)
   file should be one of the first files you edit to tailor it to your project.
   Anywhere you see `EDITME` should be updated. The provided manifest.json file
   fills in the bare minimum. The [manifest.json documentation from Google](https://developer.chrome.com/extensions/manifest)
